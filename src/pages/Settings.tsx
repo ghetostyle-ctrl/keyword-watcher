@@ -35,7 +35,7 @@ export function Settings({
       <header className="management-heading page-heading">
         <div>
           <p className="management-eyebrow eyebrow">데이터·자동화</p>
-          <h1>수집 설정</h1>
+          <h1>데이터 연결</h1>
           <p className="muted page-description">
             실제 검색량을 연결하고, 매일의 변화를 기록하세요.
           </p>

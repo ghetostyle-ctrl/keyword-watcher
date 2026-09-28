@@ -26,12 +26,13 @@
 - **로고:** `public/brand-mark.svg`의 `#ff6b00`/`#121212`는 로고 안에서만 쓴다(UI 채움 금지, 흰 라벨 2.9:1). 워드마크는 한 색 `--sidebar-text` 15/600.
 - **티커(TREND LIVE):** 페이지 헤더 아래 흰 스트립(40px, `--surface`, 1px `--line`, `--radius-sm`). 라벨 Zap 14 `--accent` + 12/600 `--accent-ink`, 항목 13px, 증가값 `--success`. 실제 상승 키워드만 복제 트랙(`aria-hidden`)으로 순환, 일시정지 버튼과 hover·focus 일시정지, reduced-motion에서 정지. 라벨 `TREND LIVE`는 기능명이라 영문 유지.
 - **시장 시그널:** 표준 카드. Radar 20을 40px `--accent-soft` 원 안에 둔다. 라벨 12/500 `--muted`, 제목 20/600, 본문 14 `--muted`.
-- **사이드바 푸터:** 시작 가이드 nav, 12px 안내 한 줄 + `--accent-on-dark` 링크 `수집 설정하기`(#settings), `.local-note`(6px 점 + 로컬 SQLite 문구). 예전 `.sidebar-tip` 카드·LOCAL 배지는 삭제.
+- **사이드바 푸터:** 시작 가이드 nav, 13px 안내 한 줄 + `--accent-on-dark` 링크 `수집 설정하기`(#settings), `.local-note`(6px 점 + 로컬 SQLite 문구). 예전 `.sidebar-tip` 카드·LOCAL 배지는 삭제.
 - **앱 전환 카드:** `<details>` 구조와 이름·부제 문자열은 그대로 유지(§9.1-2). 아바타는 각 앱 고정색, 현재 앱에 Check. ≤760에서는 아바타+화살표만.
 - **≤760 상단 영역:** 1행 브랜드·연결 상태 칩·앱 전환, 2행 가로 스크롤 nav(활성 = 하단 2px `--accent-on-dark`). 헤더와 사이드바 푸터는 숨김.
 - **카테고리 필터:** 세그먼트(§4.5). 카테고리 스타터 선택 카드는 `--accent-soft`/`--accent-line`, 제목 `--accent-ink`.
 - **키워드 히스토리 차트:** 저장된 실제 점만, 날짜 공백이면 선을 끊는다. 선 2px `--accent`, 점 r3, 격자 `--line`.
-- **숫자:** 지표 값 20/600, 상세 다이얼로그 검색량과 자동 수집 시각은 `--text-display` 28/600.
+- **숫자:** 지표 타일 값 28/600 tabular + 단위 14 muted (3개 한 줄, ≤760 1열), 상세 다이얼로그 검색량과 자동 수집 시각은 `--text-display` 28/600.
+- **글자 크기 (v2 §10):** 본문·표 셀·카드 설명·폼 14px, 보조/메타 13px, 12px는 뱃지·칩·타임스탬프·표 헤더·카운트만. 사이드바 nav 14px. 화면 제목 = 메뉴 이름 (추적 키워드, 데이터 연결).
 
 ## 4. 라벨
 영문 eyebrow는 한국어로: 시장 개요 · 내 키워드 · 데이터·자동화 · 수집 기록, nav 그룹 `워크스페이스`. `TREND LIVE`, `NEW`, `KST`는 유지.

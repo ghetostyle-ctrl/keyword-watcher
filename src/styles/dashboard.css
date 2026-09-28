@@ -143,7 +143,7 @@
 }
 .signal-label {
   color: var(--muted);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: var(--weight-medium);
 }
 .signal h2 {
@@ -177,13 +177,14 @@
 }
 
 /* ---- 지표 타일 (§4.9) -------------------------------------------------- */
+/* 타일 수(3개)에 맞춰 한 줄로 고르게. 좁으면 1열로 쌓는다 (2+1 방지). */
 .metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--s4);
 }
 .metric .cluster {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--muted);
 }
@@ -191,21 +192,22 @@
   color: var(--faint);
 }
 .metric-value {
-  font-size: var(--text-xl);
+  font-size: var(--text-title);
   font-weight: var(--weight-strong);
-  letter-spacing: var(--tracking-title);
-  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-heading);
+  line-height: 1.2;
   margin: var(--s2) 0 var(--s1);
 }
 .metric-value small {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--muted);
   font-weight: var(--weight-regular);
   letter-spacing: 0;
   margin-left: var(--s1);
 }
 .metric p {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--faint);
 }
 
@@ -254,7 +256,7 @@
   color: var(--ink);
 }
 .riser-value small {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: var(--weight-regular);
   color: var(--muted);
   margin-left: var(--s1);
@@ -271,7 +273,7 @@
   padding-top: var(--s3);
   margin-top: var(--s3);
   border-top: 1px solid var(--line);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 .riser-bottom strong {
@@ -299,12 +301,12 @@
   padding: var(--s6);
 }
 .compact-empty h3 {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: var(--weight-medium);
 }
 .compact-empty p,
 .inline-empty p {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
   margin-top: var(--s1);
 }
@@ -441,7 +443,8 @@ button.keyword-chip:hover {
 .keyword-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
+  line-height: 1.5;
   white-space: nowrap;
 }
 .keyword-table th {
@@ -524,7 +527,7 @@ button.keyword-chip:hover {
   font-variant-numeric: tabular-nums;
 }
 .table-unit {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   margin-left: var(--s1);
   color: var(--muted);
 }
@@ -538,7 +541,7 @@ button.keyword-chip:hover {
 }
 .comparison-label {
   color: var(--muted);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }
 .table-foot {
   display: flex;
@@ -547,7 +550,7 @@ button.keyword-chip:hover {
   gap: var(--s2);
   margin-inline: calc(var(--s5) * -1);
   padding: var(--s3) var(--s5);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
   border-top: 1px solid var(--line);
   background: var(--surface-soft);
@@ -567,7 +570,7 @@ button.keyword-chip:hover {
   font-variant-numeric: tabular-nums;
 }
 .detail-metric small {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: var(--weight-regular);
   letter-spacing: 0;
   margin-left: var(--s2);
@@ -592,7 +595,7 @@ button.keyword-chip:hover {
   font-size: 12px;
 }
 .history-data {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 .history-data summary {
   cursor: pointer;
@@ -616,7 +619,7 @@ button.keyword-chip:hover {
   font-weight: var(--weight-medium);
 }
 .detail-note {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
   margin-top: var(--s5);
 }
@@ -629,6 +632,9 @@ button.keyword-chip:hover {
   }
 }
 @media (max-width: 760px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
   .signal {
     padding: var(--s5);
   }

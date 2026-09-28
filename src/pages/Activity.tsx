@@ -81,7 +81,7 @@ export function Activity() {
             description="키워드를 등록하고 API를 설정한 뒤 수집을 실행해 주세요. 첫 실행부터 여기에 기록됩니다."
             action={
               <a className="btn" href="#settings">
-                수집 설정 보기
+                데이터 연결 보기
               </a>
             }
           />

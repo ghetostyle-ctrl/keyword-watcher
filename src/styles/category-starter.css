@@ -41,7 +41,7 @@
   font-weight: var(--weight-strong);
 }
 .category-choice > span:last-child {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 .category-choice[aria-pressed="true"] .category-choice-heading strong {
@@ -95,7 +95,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   overflow-wrap: anywhere;
   transition: var(--transition-colors);
 }
@@ -117,7 +117,7 @@
   margin-left: auto;
   color: var(--muted);
   white-space: nowrap;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }
 .starter-keyword.is-tracked {
   color: var(--muted);

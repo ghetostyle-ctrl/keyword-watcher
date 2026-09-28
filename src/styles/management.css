@@ -15,18 +15,18 @@
   border-radius: var(--radius-sm);
   padding: 10px 14px;
   color: var(--ink);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 .management-intro > svg {
   color: var(--muted);
   margin-top: 2px;
 }
 .management-intro strong {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: var(--weight-strong);
 }
 .management-intro p {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--muted);
   margin-top: 2px;
   max-width: var(--prose-max);
@@ -51,7 +51,8 @@
   border-collapse: collapse;
   width: 100%;
   text-align: left;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
+  line-height: 1.5;
 }
 .management-table th {
   height: 40px;
@@ -83,7 +84,7 @@
 }
 .management-table-footer {
   padding-top: var(--s3);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 .management-form {
@@ -133,7 +134,7 @@
     grid-column: 1 / -1;
   }
   .keyword-registry td:nth-child(3) {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     text-align: right;
   }
   .keyword-registry td:nth-child(4) {

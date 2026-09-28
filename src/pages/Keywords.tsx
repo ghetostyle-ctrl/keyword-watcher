@@ -68,7 +68,7 @@ export function Keywords({ onChanged }: { onChanged: () => void }) {
       <header className="management-heading page-heading">
         <div>
           <p className="management-eyebrow eyebrow">내 키워드</p>
-          <h1>키워드 관리</h1>
+          <h1>추적 키워드</h1>
           <p className="muted page-description">
             관심 시장과 경쟁사의 키워드를 꾸준히 관찰하세요.
           </p>
@@ -104,7 +104,7 @@ export function Keywords({ onChanged }: { onChanged: () => void }) {
       <section className="card registry-card" aria-labelledby="registry-title">
         <div className="section-head">
           <div className="section-title">
-            <h2 id="registry-title">추적 키워드</h2>
+            <h2 id="registry-title">키워드 목록</h2>
             {data && <Badge tone="accent">수집 중 {activeCount}개</Badge>}
           </div>
           <Button variant="ghost" onClick={reload} disabled={loading}>

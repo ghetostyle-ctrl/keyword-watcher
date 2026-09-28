@@ -11,7 +11,7 @@
   min-width: 0;
 }
 .connection-description {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--muted);
   margin-bottom: var(--s5);
 }
@@ -30,14 +30,14 @@
   gap: var(--s3);
   border-bottom: 1px solid var(--line);
   padding-bottom: var(--s3);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 .connection-list li:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
 .settings-guide {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--muted);
   margin: 0;
   padding-left: var(--s5);
@@ -47,7 +47,7 @@
 }
 .settings-guide code {
   color: var(--ink);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }
 .settings-help {
   display: flex;
@@ -76,7 +76,7 @@
   flex-direction: column;
   gap: var(--s3);
   margin: var(--s5) 0 0;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 .settings-detail > div {
   display: flex;
@@ -104,7 +104,7 @@
 }
 .import-file input {
   max-width: 100%;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }
 .import-file input::file-selector-button {
   padding: var(--s2) var(--s3);
@@ -118,6 +118,6 @@
 }
 .csv-input {
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   line-height: 1.7;
 }
