@@ -1,7 +1,9 @@
 import {
-  AlertCircle,
   ArrowRight,
+  CircleAlert,
+  CircleCheck,
   Database,
+  Info,
   LoaderCircle,
   X,
 } from "lucide-react";
@@ -12,7 +14,7 @@ export function Button({
   children,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "danger";
   children: ReactNode;
 }) {
   return (
@@ -30,23 +32,31 @@ export function Badge({
   tone = "neutral",
 }: {
   children: ReactNode;
-  tone?: "neutral" | "positive" | "warning" | "error";
+  tone?: "neutral" | "accent" | "positive" | "warning" | "error";
 }) {
   return <span className={`badge badge-${tone}`}>{children}</span>;
 }
+const noticeIcons = {
+  info: Info,
+  success: CircleCheck,
+  error: CircleAlert,
+} as const;
 export function Notice({
   children,
   error = false,
+  tone = error ? "error" : "info",
 }: {
   children: ReactNode;
   error?: boolean;
+  tone?: keyof typeof noticeIcons;
 }) {
+  const Icon = noticeIcons[tone];
   return (
     <div
-      className={`notice ${error ? "notice-error" : "notice-success"}`}
-      role={error ? "alert" : "status"}
+      className={`notice notice-${tone}`}
+      role={tone === "error" ? "alert" : "status"}
     >
-      <AlertCircle size={18} />
+      <Icon size={16} strokeWidth={1.75} aria-hidden="true" />
       <span>{children}</span>
     </div>
   );
@@ -63,7 +73,7 @@ export function EmptyState({
   return (
     <div className="empty">
       <div className="empty-symbol">
-        <Database size={22} strokeWidth={1.5} />
+        <Database size={20} strokeWidth={1.75} aria-hidden="true" />
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
@@ -74,7 +84,7 @@ export function EmptyState({
 export function LoadingState() {
   return (
     <div className="empty" role="status">
-      <LoaderCircle size={24} className="loader" />
+      <LoaderCircle size={16} className="loader" aria-hidden="true" />
       <p>저장된 데이터를 불러오고 있습니다.</p>
     </div>
   );
@@ -108,10 +118,10 @@ export function Modal({
           onClick={onClose}
           aria-label="닫기"
         >
-          <X size={20} />
+          <X size={16} />
         </Button>
       </div>
-      {children}
+      <div className="dialog-body">{children}</div>
     </dialog>
   );
 }
@@ -128,8 +138,13 @@ export function Showcase() {
         </Button>
         <Button>새로고침</Button>
         <Button disabled>수집 중</Button>
+        <Button variant="ghost">닫기</Button>
+        <Button variant="danger">삭제</Button>
+        <Badge>대기</Badge>
+        <Badge tone="accent">수집 중</Badge>
         <Badge tone="positive">연결됨</Badge>
         <Badge tone="warning">연결 필요</Badge>
+        <Badge tone="error">실패</Badge>
       </div>
       <div className="card">
         <h2>데이터 상태</h2>
@@ -143,6 +158,7 @@ export function Showcase() {
         <input placeholder="추적할 키워드 입력" />
       </label>
       <Notice>설정이 저장되었습니다.</Notice>
+      <Notice tone="success">수집을 완료했습니다.</Notice>
       <Notice error>연결 정보를 확인해 주세요.</Notice>
       <LoadingState />
     </main>

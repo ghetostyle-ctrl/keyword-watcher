@@ -13,7 +13,12 @@ export function KeywordRegistry({
   readonly toggle: (item: TrackedKeyword) => Promise<void>;
 }) {
   return (
-    <div className="management-table-wrap">
+    <section
+      className="management-table-wrap"
+      aria-label="등록 키워드 표"
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: scrollable region needs keyboard focus so wide tables can be scrolled without a mouse.
+      tabIndex={0}
+    >
       <table className="management-table keyword-registry">
         <thead>
           <tr>
@@ -41,7 +46,7 @@ export function KeywordRegistry({
                 })}
               </td>
               <td data-label="수집 상태">
-                <Badge tone={item.active ? "positive" : "neutral"}>
+                <Badge tone={item.active ? "accent" : "neutral"}>
                   {item.active ? "수집 중" : "일시 중지"}
                 </Badge>
               </td>
@@ -65,6 +70,6 @@ export function KeywordRegistry({
       <p className="management-table-footer">
         전체 {total}개 중 {items.length}개 표시
       </p>
-    </div>
+    </section>
   );
 }

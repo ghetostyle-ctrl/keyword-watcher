@@ -1,75 +1,28 @@
+/* 색·크기·모션 변수는 suite-tokens.css(스위트 공용, main.tsx에서 먼저 import)에 있다.
+   이 파일에는 요소 리셋과 유틸리티만 둔다. accent는 <html data-app="trendwatch">. */
 :root {
-  font-family:
-    system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink);
   background: var(--canvas);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --canvas: #fafaf8;
-  --surface-subtle: #f7f5f2;
-  --surface: #fff;
-  --surface-muted: #f2f0ec;
-  --ink: #121212;
-  --muted: #62605d;
-  --subtle: #716e69;
-  --line: #e2ded9;
-  --brand: #ff6b00;
-  --brand-hover: #ff8126;
-  --black: #121212;
-  --dark-surface: #1d1d1d;
-  --dark-hover: #282828;
-  --dark-line: #3a3a3a;
-  --on-dark: #fafafa;
-  --muted-on-dark: #b3b3b3;
-  --accent: #b54708;
-  --accent-hover: #93370b;
-  --accent-soft: #fff0e5;
-  --accent-tint: #fff7f0;
-  --amber: #8a6318;
-  --amber-soft: #fbf6e8;
-  --red: #bf4646;
-  --red-soft: #fdf0ef;
-  --white: #fff;
-  --s1: 4px;
-  --s2: 8px;
-  --s3: 12px;
-  --s4: 16px;
-  --s5: 20px;
-  --s6: 24px;
-  --s8: 32px;
-  --s10: 40px;
-  --s12: 48px;
-  --s16: 64px;
-  --text-xs: 12px;
-  --text-sm: 13px;
-  --text-base: 14px;
-  --text-md: 16px;
-  --text-lg: 18px;
-  --text-xl: 22px;
-  --text-2xl: 28px;
-  --text-3xl: 32px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-pill: 999px;
-  --sidebar: 232px;
-  --shadow-card: 0 2px 6px rgb(18 18 18 / 3%);
-  --shadow-dialog: 0 24px 80px rgb(18 18 18 / 16%);
-  --motion-fast: 140ms ease-out;
   font-size: var(--text-base);
   line-height: 1.6;
+  letter-spacing: var(--tracking-body);
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  background: var(--canvas);
 }
 button,
 input,
 select,
 textarea {
   font: inherit;
+  letter-spacing: inherit;
 }
 button,
 a,
@@ -108,22 +61,31 @@ h1,
 h2,
 h3 {
   line-height: 1.3;
+  font-weight: var(--weight-strong);
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+b,
+strong {
+  font-weight: var(--weight-strong);
 }
 h1 {
-  font-size: var(--text-3xl);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-size: var(--text-title);
+  letter-spacing: var(--tracking-heading);
 }
 h2 {
   font-size: var(--text-lg);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-title);
 }
 h3 {
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-title);
 }
 :focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
 }
 ::selection {
   background: var(--accent-soft);
@@ -135,16 +97,16 @@ h3 {
   font-size: var(--text-sm);
 }
 .mono {
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
 }
 .numeric {
   font-variant-numeric: tabular-nums;
 }
 .positive {
-  color: var(--accent);
+  color: var(--success);
 }
 .negative {
-  color: var(--red);
+  color: var(--danger);
 }
 .stack {
   display: flex;
@@ -175,10 +137,13 @@ h3 {
   position: fixed;
   left: var(--s4);
   top: -100px;
-  z-index: 10;
+  z-index: 30;
   background: var(--accent);
-  color: var(--white);
-  padding: var(--s3);
+  color: var(--on-accent);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
 }
 .skip-link:focus {
   top: var(--s4);

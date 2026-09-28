@@ -75,7 +75,7 @@ export function CategoryStarter({
     >
       <div className="section-head">
         <div className="section-title">
-          <Grid2X2 size={19} />
+          <Grid2X2 size={16} />
           <h2 id="category-starter-title">카테고리로 시작하기</h2>
         </div>
         <Badge>카테고리별 30개</Badge>
@@ -97,9 +97,9 @@ export function CategoryStarter({
             <span className="category-choice-heading">
               <strong>{item.name}</strong>
               {categoryId === item.id ? (
-                <Check size={17} aria-hidden="true" />
+                <Check size={16} aria-hidden="true" />
               ) : (
-                <ArrowRight size={17} aria-hidden="true" />
+                <ArrowRight size={16} aria-hidden="true" />
               )}
             </span>
             <span>{item.description}</span>

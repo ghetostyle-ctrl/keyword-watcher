@@ -32,11 +32,11 @@ export function Settings({
   const openImport = () => setModal(true);
   return (
     <div className="stack management-page">
-      <header className="management-heading">
+      <header className="management-heading page-heading">
         <div>
-          <p className="management-eyebrow">DATA & AUTOMATION</p>
+          <p className="management-eyebrow eyebrow">데이터·자동화</p>
           <h1>수집 설정</h1>
-          <p className="muted">
+          <p className="muted page-description">
             실제 검색량을 연결하고, 매일의 변화를 기록하세요.
           </p>
         </div>
@@ -47,7 +47,7 @@ export function Settings({
       </header>
       {message && <Notice>{message}</Notice>}
       <div className="management-intro">
-        <ShieldCheck size={20} />
+        <ShieldCheck size={16} />
         <div>
           <strong>검색량 데이터는 안전하게, 서버에서만.</strong>
           <p>
@@ -62,7 +62,7 @@ export function Settings({
           <section className="card" aria-labelledby="schedule-title">
             <div className="section-head">
               <div className="section-title">
-                <CalendarClock size={19} />
+                <CalendarClock size={16} />
                 <h2 id="schedule-title">자동 수집</h2>
               </div>
               {status && (
@@ -122,7 +122,7 @@ export function Settings({
           <section className="card" aria-labelledby="import-title">
             <div className="section-head">
               <div className="section-title">
-                <Upload size={19} />
+                <Upload size={16} />
                 <h2 id="import-title">보유 데이터 가져오기</h2>
               </div>
             </div>
@@ -136,7 +136,7 @@ export function Settings({
             </p>
             <div className="import-actions">
               <Button onClick={openImport}>
-                <Upload size={15} />
+                <Upload size={16} />
                 CSV 가져오기
               </Button>
               <a
@@ -144,7 +144,7 @@ export function Settings({
                 download="keyword_snapshot_template.csv"
                 className="btn"
               >
-                <Download size={15} />빈 양식
+                <Download size={16} />빈 양식
               </a>
             </div>
           </section>

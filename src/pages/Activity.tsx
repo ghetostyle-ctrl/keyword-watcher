@@ -19,10 +19,10 @@ const statusLabels = {
   failed: "실패",
 } satisfies Record<CollectionRun["status"], string>;
 const statusTones = {
-  running: "warning",
+  running: "accent",
   success: "positive",
   failed: "error",
-} satisfies Record<CollectionRun["status"], "warning" | "positive" | "error">;
+} satisfies Record<CollectionRun["status"], "accent" | "positive" | "error">;
 const triggerLabels = {
   manual: "직접 실행",
   scheduler: "예약 실행",
@@ -40,11 +40,13 @@ export function Activity() {
   const runs = data?.runs ?? [];
   return (
     <div className="stack management-page">
-      <header className="management-heading">
+      <header className="management-heading page-heading">
         <div>
-          <p className="management-eyebrow">COLLECTION LOG</p>
+          <p className="management-eyebrow eyebrow">수집 기록</p>
           <h1>수집 기록</h1>
-          <p className="muted">매일의 데이터 수집 과정과 결과를 확인하세요.</p>
+          <p className="muted page-description">
+            매일의 데이터 수집 과정과 결과를 확인하세요.
+          </p>
         </div>
         <Button onClick={reload} disabled={loading}>
           <RefreshCw size={16} />
@@ -52,7 +54,7 @@ export function Activity() {
         </Button>
       </header>
       <div className="management-intro">
-        <Clock3 size={20} />
+        <Clock3 size={16} />
         <div>
           <strong>수집의 시작부터 저장까지, 투명하게.</strong>
           <p>
@@ -64,7 +66,7 @@ export function Activity() {
       <section className="card registry-card" aria-labelledby="activity-title">
         <div className="section-head">
           <div className="section-title">
-            <History size={19} />
+            <History size={16} />
             <h2 id="activity-title">최근 실행 내역</h2>
           </div>
           {data && <span className="section-note">{runs.length}개 기록</span>}
@@ -88,7 +90,7 @@ export function Activity() {
             {runs.map((run) => (
               <li className="run-item" key={run.id}>
                 <div className={`run-mark run-mark-${run.status}`}>
-                  <History size={19} />
+                  <History size={16} />
                 </div>
                 <div className="run-body">
                   <div className="cluster between">

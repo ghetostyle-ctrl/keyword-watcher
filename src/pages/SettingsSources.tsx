@@ -11,7 +11,7 @@ export function SettingsSources({
       <section className="card" aria-labelledby="api-title">
         <div className="section-head">
           <div className="section-title">
-            <KeyRound size={19} />
+            <KeyRound size={16} />
             <h2 id="api-title">네이버 검색광고 API</h2>
           </div>
           {status && (
@@ -36,7 +36,9 @@ export function SettingsSources({
               <li key={item.name}>
                 <span>{item.name}</span>
                 <Badge tone={item.ready ? "positive" : "neutral"}>
-                  {item.ready && <Check size={13} />}{" "}
+                  {item.ready && (
+                    <Check size={12} strokeWidth={2} aria-hidden="true" />
+                  )}{" "}
                   {item.ready ? "입력됨" : "미입력"}
                 </Badge>
               </li>
@@ -77,7 +79,7 @@ export function SettingsSources({
       <section className="card" aria-labelledby="source-title">
         <div className="section-head">
           <div className="section-title">
-            <Database size={19} />
+            <Database size={16} />
             <h2 id="source-title">데이터를 읽는 방법</h2>
           </div>
         </div>

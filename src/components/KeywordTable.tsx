@@ -1,5 +1,7 @@
 import {
-  ArrowDownWideNarrow,
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
   Download,
   ListFilter,
   Search,
@@ -46,18 +48,18 @@ export function KeywordTable({
     <section className="card keyword-table-card">
       <div className="section-head">
         <div className="section-title">
-          <ListFilter size={19} />
+          <ListFilter size={16} strokeWidth={1.75} aria-hidden="true" />
           <h2>전체 키워드</h2>
           <Badge>{number(rows.length)}개</Badge>
         </div>
         <a className="btn" href="/api/export">
-          <Download size={15} />
+          <Download size={16} aria-hidden="true" />
           CSV 내보내기
         </a>
       </div>
       <div className="table-toolbar">
         <label className="search-field">
-          <Search size={17} />
+          <Search size={16} aria-hidden="true" />
           <span className="sr-only">키워드 검색</span>
           <input
             value={query}
@@ -75,7 +77,7 @@ export function KeywordTable({
           description="키워드를 등록하고 첫 수집을 시작하세요. 보유한 실제 데이터는 CSV로 가져오세요."
           action={
             <a className="text-button" href="#settings">
-              데이터 가져오기 <Download size={14} />
+              데이터 가져오기 <Download size={14} aria-hidden="true" />
             </a>
           }
         />
@@ -85,7 +87,12 @@ export function KeywordTable({
           description="다른 검색어를 입력해 주세요."
         />
       ) : (
-        <div className="table-wrap">
+        <section
+          className="table-wrap"
+          aria-label="전체 키워드 표"
+          // biome-ignore lint/a11y/noNoninteractiveTabindex: scrollable region needs keyboard focus so wide tables can be scrolled without a mouse.
+          tabIndex={0}
+        >
           <table className="keyword-table">
             <thead>
               <tr>
@@ -111,7 +118,21 @@ export function KeywordTable({
                   >
                     <button type="button" onClick={() => toggleSort(item.key)}>
                       {item.label}
-                      <ArrowDownWideNarrow size={14} />
+                      {sort !== item.key ? (
+                        <ArrowUpDown size={12} aria-hidden="true" />
+                      ) : ascending ? (
+                        <ArrowUp
+                          size={12}
+                          className="sort-active"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <ArrowDown
+                          size={12}
+                          className="sort-active"
+                          aria-hidden="true"
+                        />
+                      )}
                     </button>
                   </th>
                 ))}
@@ -149,7 +170,7 @@ export function KeywordTable({
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
       )}
       <div className="table-foot">
         <span>검색광고 API의 월간 검색량 추정치입니다.</span>

@@ -6,7 +6,7 @@
 .run-item {
   display: flex;
   gap: var(--s4);
-  padding: var(--s6) 0;
+  padding: var(--s5) 0;
   border-bottom: 1px solid var(--line);
 }
 .run-item:first-child {
@@ -25,16 +25,16 @@
   flex-shrink: 0;
 }
 .run-mark-success {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--success-soft);
+  color: var(--success);
 }
 .run-mark-failed {
-  background: var(--red-soft);
-  color: var(--red);
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 .run-mark-running {
-  background: var(--amber-soft);
-  color: var(--amber);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
 }
 .run-body {
   flex: 1;

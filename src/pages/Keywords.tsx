@@ -65,16 +65,16 @@ export function Keywords({ onChanged }: { onChanged: () => void }) {
   }
   return (
     <div className="stack management-page">
-      <header className="management-heading">
+      <header className="management-heading page-heading">
         <div>
-          <p className="management-eyebrow">MY KEYWORDS</p>
+          <p className="management-eyebrow eyebrow">내 키워드</p>
           <h1>키워드 관리</h1>
-          <p className="muted">
+          <p className="muted page-description">
             관심 시장과 경쟁사의 키워드를 꾸준히 관찰하세요.
           </p>
         </div>
         <Button variant="primary" onClick={openModal}>
-          <Plus size={17} />
+          <Plus size={16} />
           키워드 등록
         </Button>
       </header>
@@ -92,7 +92,7 @@ export function Keywords({ onChanged }: { onChanged: () => void }) {
         />
       )}
       <div className="management-intro">
-        <Tag size={20} />
+        <Tag size={16} />
         <div>
           <strong>작게 시작하고, 흐름을 쌓아보세요.</strong>
           <p>
@@ -105,16 +105,16 @@ export function Keywords({ onChanged }: { onChanged: () => void }) {
         <div className="section-head">
           <div className="section-title">
             <h2 id="registry-title">추적 키워드</h2>
-            {data && <Badge tone="positive">수집 중 {activeCount}개</Badge>}
+            {data && <Badge tone="accent">수집 중 {activeCount}개</Badge>}
           </div>
           <Button variant="ghost" onClick={reload} disabled={loading}>
-            <RefreshCw size={15} />
+            <RefreshCw size={16} />
             새로고침
           </Button>
         </div>
         <div className="management-toolbar">
           <label className="management-search">
-            <Search size={17} />
+            <Search size={16} />
             <span className="sr-only">키워드 또는 카테고리 검색</span>
             <input
               value={query}

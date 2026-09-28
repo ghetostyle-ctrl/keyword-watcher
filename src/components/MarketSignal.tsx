@@ -11,12 +11,12 @@ export function MarketSignal({ data }: { data: Dashboard }) {
   return (
     <section className="signal">
       <div className="signal-icon">
-        <Radar size={26} strokeWidth={1.5} />
+        <Radar size={20} strokeWidth={1.75} aria-hidden="true" />
       </div>
       <div className="signal-content">
         <div className="cluster">
           <span className="signal-label">오늘의 시장 시그널</span>
-          <Badge tone="positive">
+          <Badge tone="accent">
             {data.latestDate ? "스냅샷 분석" : "시작하기"}
           </Badge>
         </div>
@@ -43,10 +43,10 @@ export function MarketSignal({ data }: { data: Dashboard }) {
         {!data.latestDate && (
           <div className="cluster signal-actions">
             <a className="btn btn-primary" href="#keywords">
-              첫 키워드 등록 <ArrowRight size={15} />
+              첫 키워드 등록 <ArrowRight size={16} aria-hidden="true" />
             </a>
             <a className="signal-link" href="#settings">
-              데이터 연결하기 <ArrowUpRight size={15} />
+              데이터 연결하기 <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         )}

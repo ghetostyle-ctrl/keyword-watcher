@@ -1,9 +1,9 @@
 import {
-  ArrowDownRight,
   ArrowUpRight,
   MoveUpRight,
   Radar,
   Sparkles,
+  TrendingDown,
   TrendingUp,
 } from "lucide-react";
 import type { Dashboard, KeywordRow } from "../../shared/contracts";
@@ -39,7 +39,7 @@ export function Metrics({ data }: { data: Dashboard }) {
         <div className="metric card" key={stat.label}>
           <div className="cluster between">
             <span>{stat.label}</span>
-            <stat.icon size={17} />
+            <stat.icon size={14} strokeWidth={1.75} aria-hidden="true" />
           </div>
           <div className="metric-value numeric">
             {stat.value}
@@ -62,7 +62,7 @@ export function RisingCards({
     <section>
       <div className="section-head">
         <h2 className="section-title">
-          <TrendingUp size={20} />
+          <TrendingUp size={16} strokeWidth={1.75} aria-hidden="true" />
           급상승 TOP 3
         </h2>
         <span className="section-note">{data.days}일 검색량 증가량 기준</span>
@@ -84,7 +84,7 @@ export function RisingCards({
               <div className="riser-value">
                 {signed(row.delta ?? 0)}
                 <small>건</small>
-                <MoveUpRight size={22} />
+                <MoveUpRight size={16} aria-hidden="true" />
               </div>
               <div className="riser-bottom">
                 <span>이전 스냅샷 대비</span>
@@ -100,7 +100,7 @@ export function RisingCards({
       ) : (
         <div className="compact-empty card">
           <span className="empty-line-icon">
-            <TrendingUp size={24} strokeWidth={1.5} />
+            <TrendingUp size={20} strokeWidth={1.75} aria-hidden="true" />
           </span>
           <div>
             <h3>다음 상승 키워드를 기다리고 있어요</h3>
@@ -126,7 +126,7 @@ export function NewKeywords({
     <section className="card">
       <div className="section-head">
         <h2 className="section-title">
-          <Sparkles size={19} />
+          <Sparkles size={16} strokeWidth={1.75} aria-hidden="true" />
           새로 등장한 키워드
         </h2>
         <span className="section-note">최근 첫 발견일 3개 · 내 DB 기준</span>
@@ -139,7 +139,7 @@ export function NewKeywords({
                 <i className="dot connected" />
                 <strong>{day(group.date)}</strong>
                 {group.date === data.latestDate && (
-                  <Badge tone="positive">최신</Badge>
+                  <Badge tone="accent">최신</Badge>
                 )}
               </div>
               <div className="new-keywords">
@@ -154,7 +154,7 @@ export function NewKeywords({
                     >
                       <span>NEW</span>
                       {item.keyword}
-                      <ArrowUpRight size={13} />
+                      <ArrowUpRight size={12} aria-hidden="true" />
                     </button>
                   ) : (
                     <span className="keyword-chip" key={item.keyword}>
@@ -170,7 +170,7 @@ export function NewKeywords({
       ) : (
         <div className="inline-empty">
           <span className="empty-line-icon">
-            <Sparkles size={22} />
+            <Sparkles size={20} strokeWidth={1.75} aria-hidden="true" />
           </span>
           <p>처음 수집된 키워드를 날짜별로 모아 보여드려요.</p>
           <Badge>수집 대기</Badge>
@@ -196,9 +196,9 @@ export function Change({ row }: { row: KeywordRow }) {
   return (
     <span className={`change ${row.changePct >= 0 ? "positive" : "negative"}`}>
       {row.changePct > 0 ? (
-        <ArrowUpRight size={15} />
+        <TrendingUp size={12} strokeWidth={2} aria-hidden="true" />
       ) : row.changePct < 0 ? (
-        <ArrowDownRight size={15} />
+        <TrendingDown size={12} strokeWidth={2} aria-hidden="true" />
       ) : null}
       {percent(row.changePct)}
     </span>

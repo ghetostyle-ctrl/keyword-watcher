@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { Showcase } from "./components/ui";
+import "./styles/suite-tokens.css";
 import "./styles/tokens.css";
 import "./styles/components.css";
 

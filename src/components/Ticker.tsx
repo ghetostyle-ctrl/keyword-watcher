@@ -7,7 +7,7 @@ export function Ticker({ rows }: { rows: readonly KeywordRow[] }) {
   return (
     <div className="ticker">
       <span className="ticker-label">
-        <Zap size={14} /> TREND LIVE
+        <Zap size={14} aria-hidden="true" /> TREND LIVE
       </span>
       {rows.length ? (
         <>
@@ -23,7 +23,7 @@ export function Ticker({ rows }: { rows: readonly KeywordRow[] }) {
                     <span key={row.keyword}>
                       {row.keyword}
                       <b>{signed(row.delta ?? 0)}</b>
-                      <ArrowUpRight size={13} />
+                      <ArrowUpRight size={12} aria-hidden="true" />
                     </span>
                   ))}
                 </div>

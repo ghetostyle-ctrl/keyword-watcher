@@ -32,24 +32,28 @@ export function DashboardPage({
   const data = resource.data;
   return (
     <>
-      <Ticker rows={data?.topRisers ?? []} />
       <div className="dashboard">
         <div className="page-heading">
           <div>
-            <p className="eyebrow">MARKET OVERVIEW</p>
+            <p className="eyebrow">시장 개요</p>
             <h1>키워드 트렌드</h1>
             <p className="page-description">
               검색량의 변화에서, 시장의 다음 기회를 발견하세요.
             </p>
           </div>
           <Button onClick={onCollect} disabled={busy} variant="primary">
-            <RefreshCw size={15} className={busy ? "loader" : ""} />
+            <RefreshCw
+              size={16}
+              className={busy ? "loader" : ""}
+              aria-hidden="true"
+            />
             {busy ? "수집하고 있어요" : "지금 수집하기"}
           </Button>
         </div>
+        <Ticker rows={data?.topRisers ?? []} />
         <div className="dashboard-controls">
           <div className="date-info">
-            <CalendarDays size={15} />
+            <CalendarDays size={14} aria-hidden="true" />
             <span>
               마지막 업데이트 <strong>{day(data?.latestDate ?? null)}</strong>
             </span>

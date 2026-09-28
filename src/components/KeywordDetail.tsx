@@ -78,7 +78,7 @@ export function KeywordDetail({
                   <circle
                     cx={point.x}
                     cy={point.y}
-                    r="4"
+                    r="3"
                     className="chart-point"
                   />
                 ) : null}
