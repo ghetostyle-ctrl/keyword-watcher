@@ -1,7 +1,6 @@
 # 키워드와처 design system
 
-**스위트 공유 스펙 = `SUITE-DESIGN.md`** (AD FACTORY · 키워드와처 · Success AI 공통, v1 2026-09-28,
-원본 `C:\Users\a\Documents\Codex\2026-09-24\new-chat\outputs\suite-design\`). 셸·토큰·컴포넌트 값은 모두 그 문서를 따른다.
+**스위트 공유 스펙 = `SUITE-DESIGN.md`** (AD FACTORY · 키워드와처 · Success AI 공통, v1 2026-09-28; 토큰은 `src/styles/suite-tokens.css`). 셸·토큰·컴포넌트 값은 모두 그 문서를 따른다.
 이 파일에는 키워드와처만의 accent와 예외만 적는다.
 
 ## 1. 토큰 구성

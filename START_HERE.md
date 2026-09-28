@@ -8,9 +8,9 @@
 
 ## 먼저 사람이 할 일 — 딱 3가지
 
-1. **소스 ZIP을 받습니다.** 이 Markdown 파일만으로 앱이 설치되지는 않습니다. `KeywordWatcher.zip`도 함께 필요합니다.
-2. ZIP을 **압축 해제**합니다. 안에 있는 `trendwatch` 폴더에서 `package.json`, `README.md`, `.env.example`이 보이는지 확인합니다.
-3. **내 PC의 폴더와 터미널에 접근할 수 있는 AI 코딩 도구**에서 그 `trendwatch` 폴더를 엽니다. 일반 웹 채팅에 글만 붙여 넣는 것으로는 PC에 직접 설치되지 않습니다.
+1. **소스를 받습니다.** [GitHub 저장소](https://github.com/ghetostyle-ctrl/keyword-watcher)에서 초록색 **Code → Download ZIP**을 누르거나 `git clone https://github.com/ghetostyle-ctrl/keyword-watcher.git`으로 받습니다.
+2. ZIP이면 **압축 해제**합니다. `keyword-watcher`(ZIP이면 `keyword-watcher-main`) 폴더에서 `package.json`, `README.md`, `.env.example`이 보이는지 확인합니다.
+3. **내 PC의 폴더와 터미널에 접근할 수 있는 AI 코딩 도구**에서 그 폴더를 엽니다. 일반 웹 채팅에 글만 붙여 넣는 것으로는 PC에 직접 설치되지 않습니다.
 
 이후에는 아래 **‘AI에게 보낼 요청문’ 상자 하나씩** 복사해 보내세요. 앞 단계가 성공한 뒤 다음 번호로 넘어갑니다. API 로그인·약관 확인·추적할 카테고리 선택은 본인이 합니다.
 
@@ -272,6 +272,6 @@ API 키·고객 ID·.env 전체 내용은 문서에 넣지 마.
 
 - 현재 연결하는 **검색광고 API**의 공식 약관 제14조는 이용대가를 무상으로 정하고 있습니다. 검색량 조회 자체에 광고비 충전이 필요한 것은 아닙니다. 호출 제한은 별도이며 영구·무제한 무료를 뜻하지 않습니다. [공식 이용약관](https://searchad.naver.com/File/downloadfilen/?type=10&filename=API_Terms_KOR.pdf)
 - AI 코딩 도구 이용료나 별도 서버를 빌리는 비용은 선택한 서비스에 따라 다릅니다. 이 앱의 시그널 문장은 저장된 데이터의 계산으로 생성하며 별도 AI API 호출은 없습니다.
-- 다른 사람에게는 원본 배포 ZIP을 전달하세요. 설치 후 생긴 본인의 `.env`, `data/`, 로그를 다시 압축해서 보내지 마세요.
+- 다른 사람에게는 GitHub 주소(https://github.com/ghetostyle-ctrl/keyword-watcher)를 알려 주세요. 설치 후 생긴 본인의 `.env`, `data/`, 로그를 다시 압축해서 보내지 마세요.
 - `127.0.0.1`은 각자의 PC 주소입니다. 내 주소를 보내는 것만으로 다른 사람이 내 앱에 접속할 수는 없습니다.
 - 이름·색상·카테고리 목록을 바꾸는 작업은 설치와 첫 수집이 끝난 뒤 별도로 요청하는 편이 확인하기 쉽습니다.

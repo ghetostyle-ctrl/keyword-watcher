@@ -2,6 +2,15 @@
 
 시장과 경쟁사의 **월간 검색량 변화**를 매일 기록하는 개인용 키워드 트렌드 대시보드입니다. TrendScout의 기능 구성을 참고해 독립적으로 구현했습니다.
 
+## 받기
+
+GitHub에서 받습니다. 둘 중 편한 방법을 쓰세요.
+
+- **Git 사용:** `git clone https://github.com/ghetostyle-ctrl/keyword-watcher.git` → `keyword-watcher` 폴더가 생깁니다.
+- **ZIP 다운로드:** [https://github.com/ghetostyle-ctrl/keyword-watcher](https://github.com/ghetostyle-ctrl/keyword-watcher) → 초록색 **Code** 버튼 → **Download ZIP** → 압축 해제(`keyword-watcher-main` 폴더).
+
+**네이버 검색광고 API 키는 각자 발급해야 합니다.** 이 저장소에는 누구의 키도 들어 있지 않습니다. 네이버 검색광고 계정(무료)을 만든 뒤 도구 → API 사용 관리에서 API 키·비밀 키·고객 ID를 발급받아 본인 PC의 `.env`에만 넣으세요. 발급 방법은 [SETUP.md](SETUP.md)에 있습니다. 키가 없어도 앱은 실행되며, CSV 가져오기로 보유한 검색량 데이터를 볼 수 있습니다.
+
 처음 설치한다면 [순서대로 요청하는 설치 가이드](START_HERE.md)의 1~7단계 요청문을 AI에게 보내세요. 간단한 실행 방법은 [공유·설치 안내](SHARE_GUIDE.md)에 있습니다. 각 사용자가 본인 API 키와 별도 DB를 사용합니다.
 
 ## 바로 실행
@@ -108,6 +117,10 @@ CSV 가져오기는 전체 파일을 검증한 뒤 하나의 트랜잭션으로 
 
 2026-09-21 이 PC에서 실제 검색광고 인증정보를 연결하고 API 응답을 확인했습니다. 연결 확인 조회는 DB에 저장하지 않았으며, 추적 키워드 범위가 정해지기 전까지 운영 DB는 비어 있습니다. 격리된 메모리/임시 데이터베이스에서 계산·CSV·HTTP·HMAC·수집 잠금 테스트를 수행하며, 테스트 데이터는 기본 데이터베이스에 넣지 않습니다.
 
+## 라이선스
+
+MIT License. [LICENSE](LICENSE)를 참고하세요.
+
 ## 구조와 검증
 
 - `src/`: React 화면, 공통 컴포넌트, CSS 디자인 토큰
@@ -135,4 +148,4 @@ bun run build
 
 ## 브랜드 컬러
 
-주황 `#FF6B00`과 검정 `#121212`이 기본 색상입니다. 밝은 바탕의 작은 주황 글씨는 읽기 쉬운 `#B54708`을 사용합니다. 전체 색상은 `src/styles/tokens.css`, 적용 원칙은 `DESIGN.md`에서 관리합니다.
+AD FACTORY·Success AI와 같은 스위트 디자인(`src/styles/suite-tokens.css`)을 쓰고 포인트색만 다릅니다. 키워드와처의 포인트색은 주황 `#C2410C`(흰 글자 대비 5.18:1)이며, 기존 브랜드 주황 `#FF6B00`은 로고에만 씁니다. 적용 원칙은 `DESIGN.md`에서 관리합니다.
