@@ -1,0 +1,199 @@
+@import "./settings.css";
+@import "./activity.css";
+.management-page {
+  gap: var(--s8);
+}
+.management-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s5);
+  flex-wrap: wrap;
+}
+.management-heading h1 {
+  margin-bottom: var(--s2);
+}
+.management-heading > div > p:last-child {
+  font-size: var(--text-sm);
+}
+.management-eyebrow {
+  color: var(--accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: var(--s2);
+}
+.management-intro {
+  display: flex;
+  gap: var(--s4);
+  align-items: flex-start;
+  background: var(--accent-tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--s5) var(--s6);
+}
+.management-intro > svg {
+  color: var(--accent);
+  margin-top: var(--s1);
+}
+.management-intro strong {
+  font-size: var(--text-base);
+}
+.management-intro p {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-top: var(--s1);
+  max-width: 760px;
+}
+.management-toolbar {
+  display: flex;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+  flex-wrap: wrap;
+}
+.management-search {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--s3);
+  flex: 1;
+  max-width: 420px;
+  color: var(--muted);
+}
+.management-search:focus-within {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.management-search input {
+  min-width: 0;
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+}
+.management-table-wrap {
+  overflow-x: auto;
+}
+.management-table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+.management-table th {
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-muted);
+  padding: var(--s3) var(--s4);
+  white-space: nowrap;
+}
+.management-table td {
+  padding: var(--s4);
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.management-table strong {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+.management-table th:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.management-table th:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.management-row-action {
+  text-align: right;
+}
+.management-table-footer {
+  padding-top: var(--s4);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.management-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+}
+.management-form .form-actions {
+  margin-top: var(--s2);
+}
+@media (max-width: 1100px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .management-heading {
+    align-items: flex-start;
+  }
+  .management-heading h1 {
+    font-size: var(--text-xl);
+  }
+  .management-intro {
+    padding: var(--s5);
+  }
+  .management-search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .management-search input {
+    min-height: 44px;
+  }
+  .management-filter,
+  .management-filter select {
+    width: 100%;
+  }
+  .keyword-registry thead {
+    display: none;
+  }
+  .keyword-registry tbody {
+    display: block;
+  }
+  .keyword-registry tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s3);
+    padding: var(--s4) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .keyword-registry td {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+  .keyword-registry td:first-child {
+    grid-column: 1 / -1;
+  }
+  .keyword-registry td:nth-child(3) {
+    font-size: var(--text-xs);
+    text-align: right;
+  }
+  .keyword-registry td:nth-child(4) {
+    align-self: center;
+  }
+  .management-row-action {
+    grid-column: 2;
+  }
+  .run-mark {
+    display: none;
+  }
+  .run-meta {
+    flex-direction: column;
+    gap: var(--s2);
+  }
+  .run-meta > div {
+    justify-content: space-between;
+  }
+  .settings-detail > div {
+    flex-wrap: wrap;
+    gap: var(--s1);
+  }
+  .settings-detail dd {
+    text-align: left;
+  }
+}

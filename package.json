@@ -1,0 +1,37 @@
+{
+  "name": "trendwatch",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --parallel dev:api dev:web",
+    "dev:api": "bun --watch server/index.ts",
+    "dev:web": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "start": "bun server/index.ts",
+    "collect": "bun scripts/collector.ts",
+    "test": "bun test ./tests",
+    "check": "biome check .",
+    "doctor": "react-doctor . --verbose"
+  },
+  "dependencies": {
+    "hono": "^4.13.8",
+    "ky": "^2.1.0",
+    "lucide-react": "^1.47.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/bun": "^1.4.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "react-doctor": "^0.9.14",
+    "react-grab": "^0.2.0",
+    "react-scan": "^0.5.7",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}

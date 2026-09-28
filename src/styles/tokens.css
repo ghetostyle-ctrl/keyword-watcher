@@ -1,0 +1,197 @@
+:root {
+  font-family:
+    system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --canvas: #fafaf8;
+  --surface-subtle: #f7f5f2;
+  --surface: #fff;
+  --surface-muted: #f2f0ec;
+  --ink: #121212;
+  --muted: #62605d;
+  --subtle: #716e69;
+  --line: #e2ded9;
+  --brand: #ff6b00;
+  --brand-hover: #ff8126;
+  --black: #121212;
+  --dark-surface: #1d1d1d;
+  --dark-hover: #282828;
+  --dark-line: #3a3a3a;
+  --on-dark: #fafafa;
+  --muted-on-dark: #b3b3b3;
+  --accent: #b54708;
+  --accent-hover: #93370b;
+  --accent-soft: #fff0e5;
+  --accent-tint: #fff7f0;
+  --amber: #8a6318;
+  --amber-soft: #fbf6e8;
+  --red: #bf4646;
+  --red-soft: #fdf0ef;
+  --white: #fff;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s8: 32px;
+  --s10: 40px;
+  --s12: 48px;
+  --s16: 64px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 32px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --sidebar: 232px;
+  --shadow-card: 0 2px 6px rgb(18 18 18 / 3%);
+  --shadow-dialog: 0 24px 80px rgb(18 18 18 / 16%);
+  --motion-fast: 140ms ease-out;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+svg {
+  flex-shrink: 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+h2 {
+  font-size: var(--text-lg);
+  letter-spacing: -0.025em;
+}
+h3 {
+  font-size: var(--text-md);
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+::selection {
+  background: var(--accent-soft);
+}
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: var(--text-sm);
+}
+.mono {
+  font-family: ui-monospace, monospace;
+}
+.numeric {
+  font-variant-numeric: tabular-nums;
+}
+.positive {
+  color: var(--accent);
+}
+.negative {
+  color: var(--red);
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+}
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+}
+.between {
+  justify-content: space-between;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  left: var(--s4);
+  top: -100px;
+  z-index: 10;
+  background: var(--accent);
+  color: var(--white);
+  padding: var(--s3);
+}
+.skip-link:focus {
+  top: var(--s4);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: user reduced-motion preference overrides component animation. */
+    animation: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: user reduced-motion preference overrides smooth scrolling. */
+    scroll-behavior: auto !important;
+    /* biome-ignore lint/complexity/noImportantStyles: user reduced-motion preference overrides component transitions. */
+    transition: none !important;
+  }
+}

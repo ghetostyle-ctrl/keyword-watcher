@@ -1,0 +1,67 @@
+.run-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.run-item {
+  display: flex;
+  gap: var(--s4);
+  padding: var(--s6) 0;
+  border-bottom: 1px solid var(--line);
+}
+.run-item:first-child {
+  padding-top: var(--s2);
+}
+.run-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.run-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.run-mark-success {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.run-mark-failed {
+  background: var(--red-soft);
+  color: var(--red);
+}
+.run-mark-running {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+.run-body {
+  flex: 1;
+  min-width: 0;
+}
+.run-body h3 {
+  font-size: var(--text-base);
+}
+.run-message {
+  margin-top: var(--s3);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+.run-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s6);
+  margin: var(--s3) 0 0;
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.run-meta > div {
+  display: flex;
+  gap: var(--s2);
+}
+.run-meta dd {
+  margin: 0;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}

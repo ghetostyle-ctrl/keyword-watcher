@@ -1,0 +1,122 @@
+.settings-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--s6);
+  align-items: start;
+}
+.settings-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  min-width: 0;
+}
+.connection-description {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-bottom: var(--s5);
+}
+.connection-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.connection-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s3);
+  font-size: var(--text-sm);
+}
+.connection-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.settings-guide {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin: 0;
+  padding-left: var(--s5);
+}
+.settings-guide li + li {
+  margin-top: var(--s3);
+}
+.settings-guide code {
+  color: var(--ink);
+  font-size: var(--text-xs);
+}
+.settings-help {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-top: var(--s4);
+}
+.schedule-time {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: var(--s4) 0 var(--s2);
+  font-variant-numeric: tabular-nums;
+}
+.schedule-time span {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-left: var(--s2);
+}
+.settings-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  margin: var(--s5) 0 0;
+  font-size: var(--text-sm);
+}
+.settings-detail > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s4);
+}
+.settings-detail dt {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.settings-detail dd {
+  margin: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.import-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.import-file {
+  font-size: var(--text-sm);
+}
+.import-file input {
+  max-width: 100%;
+  font-size: var(--text-xs);
+}
+.import-file input::file-selector-button {
+  padding: var(--s2) var(--s3);
+  margin-right: var(--s3);
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  cursor: pointer;
+}
+.csv-input {
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-xs);
+  line-height: 1.7;
+}
