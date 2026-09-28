@@ -97,6 +97,8 @@ body {
   display: flex;
   align-items: center;
   gap: var(--s3);
+  /* AD 스위트 공통 브랜드 줄: 세 앱 모두 같은 높이(46.8px) */
+  min-height: 46.8px;
   /* 오른쪽 여백 0: 부제 "검색량 흐름을 기록하는 곳"이 한 줄에 들어가게. 로고·글자 x는 AD FACTORY와 같다 */
   margin: 0 0 var(--s5) var(--s2);
   font-size: 15px;
@@ -108,11 +110,17 @@ body {
   text-decoration: none;
 }
 .brand-icon {
-  display: block;
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
+  background: var(--sidebar-text);
+  color: var(--sidebar);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 /* §11: 세 앱 브랜드 행을 픽셀 단위로 같게 (이름 15/600 lh24 + 2 + 부제 13 lh20.8) */
 .brand-text {

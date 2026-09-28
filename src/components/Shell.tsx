@@ -48,19 +48,12 @@ export function Shell({
       </a>
       <aside className="sidebar">
         <div className="sidebar-top">
-          <a href="#dashboard" className="brand" aria-label="키워드와처 홈">
-            <img
-              className="brand-icon"
-              src="/brand-mark.svg?v=suite1"
-              width={32}
-              height={32}
-              alt=""
-            />
+          <a href="#dashboard" className="brand" aria-label="AD 스위트">
+            <span className="brand-icon" aria-hidden="true">
+              AD
+            </span>
             <span className="brand-text">
-              <span className="brand-name">
-                키워드<span className="brand-accent">와처</span>
-              </span>
-              <small className="brand-sub">검색량 흐름을 기록하는 곳</small>
+              <span className="brand-name">AD 스위트</span>
             </span>
           </a>
           <ConnectionState
