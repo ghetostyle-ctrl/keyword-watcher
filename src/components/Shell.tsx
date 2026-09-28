@@ -56,8 +56,11 @@ export function Shell({
               height={32}
               alt=""
             />
-            <span className="brand-name">
-              키워드<span className="brand-accent">와처</span>
+            <span className="brand-text">
+              <span className="brand-name">
+                키워드<span className="brand-accent">와처</span>
+              </span>
+              <small className="brand-sub">검색량 흐름을 기록하는 곳</small>
             </span>
           </a>
           <ConnectionState
@@ -74,6 +77,9 @@ export function Shell({
               <ChevronsUpDown size={14} strokeWidth={1.75} aria-hidden="true" />
             </summary>
             <div className="workspace-menu" role="menu" aria-label="앱 선택">
+              <p className="workspace-menu-title" aria-hidden="true">
+                AD 스위트
+              </p>
               <a href="/" role="menuitem" aria-current="page">
                 <span className="workspace-avatar app-avatar-trendwatch">
                   K
@@ -106,7 +112,6 @@ export function Shell({
             </div>
           </details>
         </div>
-        <p className="nav-label">워크스페이스</p>
         <nav aria-label="주 메뉴">
           {items.map((item) => (
             <a
